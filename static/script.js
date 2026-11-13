@@ -11,7 +11,7 @@ document.querySelector('form').addEventListener('submit', async(e) => {
     const features = ids.map(id => parseDecimal(document.getElementById(id).value));
 
     if(features.some(Number.isNaN)){
-        alert('Semua input harus berupa angka yang valid (contoh: 1,4 atau 1.4');
+        alert('Semua input harus berupa angka yang valid (contoh: 1,4 atau 1.4)');
         return;
     }
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
-    <h2>Deteksi Balance Scale</h2>
+    <h2 class="lilita-one-regular">Deteksi Balance Scale</h2>
     <form>
         <label for="LW">Left Weight: </label>
         <input type="text" inputmode="decimal" id="LW" placeholder="Left Weight" required>
@@ -18,16 +18,16 @@
         <label for="RW">Right Weight: </label>
         <input type="text" inputmode="decimal" id="RW" placeholder="Right Weight" required>
 
-        <label for="RD">Rigth Distance: </label>
+        <label for="RD">Right Distance: </label>
         <input type="text" inputmode="decimal" id="RD" placeholder="Right Distance" required>
 
-        <div class="button"></div>
+        <h3 id="hasil"></h3>
+        <div class="button">
             <input type="reset" id="reset">
             <input type="submit" id="submit">
         </div>
     </form>
 
-    <h3 id="hasil"></h3>
 
     <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
