@@ -1,10 +1,12 @@
+import os
 from flask import Flask, render_template, request, jsonify
 import joblib
 import numpy as np
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
-modelPath = 'model/modelDBS-knn.pkl'
+basedir = os.path.abspath(os.path.dirname(__file__))
+modelPath = os.path.join(basedir, 'model', 'modelDBS-knn.pkl')
 
 try:
     knnModel = joblib.load(modelPath)
