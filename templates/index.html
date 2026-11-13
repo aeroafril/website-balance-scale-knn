@@ -9,20 +9,22 @@
 <body>
     <h2>Deteksi Balance Scale</h2>
     <form>
-        <label for="">Left Weight: </label>
-        <input type="text">
+        <label for="LW">Left Weight: </label>
+        <input type="text" inputmode="decimal" id="LW" placeholder="Left Weight" required>
 
-        <label for="">Left Distance: </label>
-        <input type="text">
+        <label for="LD">Left Distance: </label>
+        <input type="text" inputmode="decimal" id="LD" placeholder="Left Distance" required>
 
-        <label for="">Right Weight: </label>
-        <input type="text">
+        <label for="RW">Right Weight: </label>
+        <input type="text" inputmode="decimal" id="RW" placeholder="Right Weight" required>
 
-        <label for="">Rigth Distance: </label>
-        <input type="text">
+        <label for="RD">Rigth Distance: </label>
+        <input type="text" inputmode="decimal" id="RD" placeholder="Right Distance" required>
 
-        <input type="reset">
-        <input type="submit">
+        <div class="button"></div>
+            <input type="reset" id="reset">
+            <input type="submit" id="submit">
+        </div>
     </form>
 
     <h3 id="hasil"></h3>

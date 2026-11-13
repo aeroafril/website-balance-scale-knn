@@ -13,27 +13,31 @@ except Exception as e:
     print(f"Gagal memuat model: {e}")
 
 labelBalance = {
-    'L': 'Left-weight (Berat ke Kiri)',
-    'R': 'Right-weight (Berat ke Kanan)',
+    'L': 'Left weight (Berat ke Kiri)',
+    'R': 'Right weight (Berat ke Kanan)',
     'B': 'Balanced (Seimbang)'
 }
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
     try:
         data = request.get_json()
 
-        leftWeight = float(data.get('left_weight'))
-        leftDistance = float(data.get('left_distance'))
-        rightWeight = float(data.get('right_weight'))
-        rightDistance = float(data.get('right_distance'))
+        lw = float(data.get('left_weight'))
+        ld = float(data.get('left_distance'))
+        rw = float(data.get('right_weight'))
+        rd = float(data.get('right_distance'))
 
-        features = [[leftWeight, leftDistance, rightWeight, rightDistance]]
+        features = [[lw, ld, rw, rd]]
 
         prediction = knnModel.predict(features)
         hasilPrediksi = str(prediction[0])
 
-        deskripsiHasil = labelBalance.get(hasilPrediksi, hasilPrediksi)
+        deskripsiHasil = labelBalance.get(hasilPrediksi, str(hasilPrediksi))
 
         return jsonify({
             'status': 'success',
